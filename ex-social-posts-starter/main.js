@@ -100,7 +100,7 @@ posts.forEach(post => {
                         <span class="like-button__label">Mi Piace</span>
                     </a>
                 </div>
-                <div class="likes__counter">
+                <div class="likes__counter"> 
                     Piace a <b id="like-counter-1" class="js-likes-counter">80</b> persone
                 </div>
             </div> 
