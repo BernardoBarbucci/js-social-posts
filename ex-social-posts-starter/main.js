@@ -101,12 +101,16 @@ posts.forEach(post => {
                     </a>
                 </div>
                 <div class="likes__counter"> 
-                    Piace a <b id="like-counter-1" class="js-likes-counter">${post.likes}</b> persone
+                    Piace a <b id="like-counter-${post.id}" class="js-likes-counter">${post.likes}</b> persone
                 </div>
-            </div> 
+            </div> s
         </div>            
     </div>`;
     // aggiungo appenchild
     containerPost.appendChild(postEl);
 });
 // step 3 -> collegare ogni post al rispettivo id, cosi che prenda le info dall'array
+
+const likeUp = containerPost.querySelectorAll('a.like-button.js-like-button');
+const likeDown = containerPost.querySelectorAll('strong.js-likes-counter');
+
