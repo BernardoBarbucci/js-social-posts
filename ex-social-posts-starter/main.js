@@ -107,7 +107,6 @@ posts.forEach(post => {
         </div>            
     </div>`;
     // aggiungo appenchild
-    
-
-})
+    containerPost.appendChild(postEl);
+});
 
