@@ -103,7 +103,7 @@ posts.forEach(post => {
                 <div class="likes__counter"> 
                     Piace a <b id="like-counter-${post.id}" class="js-likes-counter">${post.likes}</b> persone
                 </div>
-            </div> s
+            </div> 
         </div>            
     </div>`;
     // aggiungo appenchild
@@ -114,3 +114,16 @@ posts.forEach(post => {
 const likeUp = containerPost.querySelectorAll('a.like-button.js-like-button');
 const likeDown = containerPost.querySelectorAll('strong.js-likes-counter');
 
+for (let index = 0; index < likeUp.length; index++) {
+    const currentLike = likeUp[index];
+    currentLike.addEventListener('click', function(event){
+        event.preventDefault();
+        if (currentLike.classList.contains('like-button--liked')){
+            currentLike.classList.remove('like-button--liked');
+            likeDown[index].innerHTML = parseInt(likeDown[index].innerHTML, 10) - 1;
+        } else {
+            currentLike.classList.add('like-button--liked');
+            likeDown[index].innerHTML = parseInt(likeDown[index].innerHTML, 10) + 1;
+        }
+    });
+}
